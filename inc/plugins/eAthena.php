@@ -136,7 +136,7 @@ function eAthena_deactivate()
 global $mybb;
 $eAthenaDB = new stdClass();
 
-if ($mybb->settings['eAthena_enabled'])
+if ($mybb->settings['eAthena_enabled'] && !defined('IN_ADMINCP'))
 {
     // Global
     $plugins->add_hook('global_start', 'eAthena_global');
